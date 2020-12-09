@@ -1,0 +1,67 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.list {
+  border: 1px solid black;
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  box-shadow: 0 10px 10px 1px black;
+  text-align: center;
+}
+.addTaskBtn{
+    height: 40px;
+    width: 50%;
+    margin: 10px auto;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.addTaskBtn:hover{
+    background-color:gray;
+}
+.hidden{
+    visibility: hidden;
+}
+.form{
+    position: fixed;
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 black;
+    border: 2px solid black;
+}
+label, input {
+    display: block;
+    margin: auto;   
+}
+label{
+    padding-top: 20px;
+    font-size: 24px;
+}
+input{
+    height: 30px;
+    width: 200px;
+    font-size: 22px;
+    padding: 1px;
+    text-align: center;
+}
+textarea{
+    width: 200px;
+    height: 100px;
+    font-size: 18px;
+}
+#submitTaskBtn{
+    width: 200px;
+    margin-top: 20px;
+    height: 40px;
+    font-size: 22px;
+}
+.visible{
+    visibility: visible;
+}
