@@ -1,5 +1,5 @@
 * {
-  margin: 0%;
+  margin: 2px;
   padding: 0%;
 }
 #container {
@@ -66,9 +66,15 @@ textarea{
     visibility: visible;
 }
 .taskDiv{
-   background-color: red;
    display: grid;
-   grid-template-columns: 2fr 2fr 4fr 1fr 1fr;
+   grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
    grid-template-areas: "name date descr check del";
    border-bottom: 1px solid black;
+}
+#checkTask {
+background-image: url("../src/img/checkMark.png");
+background-size: 20px;
+width: 25px;
+outline: inherit;
+border-radius: 10px;
 }

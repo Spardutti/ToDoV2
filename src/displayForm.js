@@ -1,6 +1,6 @@
 import { submitForm } from "./submitForm";
 
-function displayForm() {
+function displayForm(tasks) {
   //get the list and button
   const list = document.querySelector(".list");
   let addTaskBtn = document.querySelector(".addTaskBtn");
@@ -17,6 +17,7 @@ function displayForm() {
   let nameInput = document.createElement("input");
   nameInput.placeholder = "Name...";
 
+  
   let date = document.createElement("label");
   date.innerHTML = "Due Date";
 
@@ -34,10 +35,16 @@ function displayForm() {
   submitTaskBtn.setAttribute("id", "submitTaskBtn");
   submitTaskBtn.setAttribute("type", "button");
   submitTaskBtn.addEventListener("click", () => {
-    //submit form and create the objects with the class
-    submitForm(nameInput, dateInput, descriptionInput, tasks);
-    list.removeChild(formContainer);
-    addTaskBtn.classList.add("visible");
+    if(nameInput.value != "" && dateInput.value != ""){
+ //submit form and create the objects with the class
+ submitForm(nameInput, dateInput, descriptionInput, tasks);
+ list.removeChild(formContainer);
+ addTaskBtn.classList.add("visible");
+    }
+    else {
+      alert("Please fill all the fields");
+    }
+   
   });
 
   formContainer.append(
