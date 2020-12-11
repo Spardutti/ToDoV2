@@ -67,14 +67,27 @@ textarea{
 }
 .taskDiv{
    display: grid;
-   grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
-   grid-template-areas: "name date descr check del";
+   grid-template-columns: 2fr 3fr  1fr 1fr;
+   grid-template-areas: "name date  check del";
    border-bottom: 1px solid black;
+   border-top: 1px solid black;
+   padding-top: 10px;
+   font-size: 20px;
 }
-#checkTask {
-background-image: url("../src/img/checkMark.png");
-background-size: 20px;
-width: 25px;
-outline: inherit;
-border-radius: 10px;
+#checkTask:hover {
+    cursor: pointer;
+    scale: 1.5
+}
+#delTask:hover {
+    cursor: pointer;
+    scale: 1.5;
+}
+.infoDiv{
+    display: grid;
+    grid-template-columns: 2fr 2fr  1fr 1fr;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+.checked{
+    text-decoration-line: line-through;
 }
