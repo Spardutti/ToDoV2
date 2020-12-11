@@ -1,30 +1,49 @@
+import moment from "moment";
+
 function displayNewTask(name, date, descr) {
   let list = document.querySelector(".list");
-  const taskContainer = document.createElement("div");
-  taskContainer.setAttribute("class", "taskContainer");
 
   const taskDiv = document.createElement("div");
   taskDiv.setAttribute("class", "taskDiv");
-  
+  taskDiv.setAttribute("id", name)
+
   const taskName = document.createElement("p");
   taskName.innerHTML = name;
 
   const taskDate = document.createElement("date");
-  taskDate.innerHTML = date;
+  if (moment(date) < moment()) {
+    taskDate.innerHTML = "Expired";
+  } else {
+    taskDate.innerHTML = moment(date).fromNow();
+  }
 
   const taskDescription = document.createElement("p");
   taskDescription.innerHTML = descr;
 
-  const checkTask = document.createElement("button");
+  const checkTask = document.createElement("p");
   checkTask.setAttribute("id", "checkTask");
+  checkTask.innerHTML = `<i class="fas fa-check"></i>`;
+  checkTask.addEventListener("click", checked)
 
-  const DelTask = document.createElement("button");
-  DelTask.innerHTML = "Del";
+  const delTask = document.createElement("p");
+  delTask.setAttribute("id", "delTask");
+  delTask.innerHTML = `<i class="fas fa-trash"></i>`;
+  delTask.addEventListener("click", () => {
+    deleteTask()
+  })
 
-  taskDiv.append(taskName, taskDate, taskDescription, checkTask, DelTask);
-  taskContainer.append(taskDiv);
+  taskDiv.append(taskName, taskDate, checkTask, delTask);
 
-  list.append(taskContainer);
+  list.appendChild(taskDiv);
+
+  function checked(){
+    taskDate.setAttribute("class", "checked");
+    taskName.setAttribute("class", "checked");
+  }
+
+  function deleteTask(){
+     console.log(delTask.parentNode)
+  }
 }
 
-export { displayNewTask }
+export { displayNewTask };
