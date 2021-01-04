@@ -29,9 +29,10 @@
     visibility: hidden;
 }
 .form{
-    position: fixed;
+    position: relative;
     width: 400px;
     height: 450px;
+    top: -100px;
     background-color: white;
     box-shadow: 0 10px 10px 0 black;
     border: 2px solid black;
