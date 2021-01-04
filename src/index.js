@@ -3,12 +3,19 @@ import { displayTasks } from "./displayTask";
 
 
 (function toDo() {
-  //tasks array to contain task
-  let tasks = [{ name: "hola", date: "2020-12-31", descr: "Piiza" },{name:"chao", date: "2020-12-24"}];
-
-  let button = document.querySelector(".addTaskBtn");
+  //if storage exist, get teh data
+  if(localStorage.getItem("tasks") != null){
+    let tasks = JSON.parse(localStorage.getItem("tasks"));
+    displayTasks(tasks)
+  }
+  //if storage is empty, create it
+  else {
+    let tasks = [];
+    let button = document.querySelector(".addTaskBtn");
   button.addEventListener("click", () => {
     displayForm(tasks);
   });
-  displayTasks(tasks);
+  }
+
+  
 })();

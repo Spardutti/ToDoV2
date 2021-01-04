@@ -1,24 +1,24 @@
 import moment from "moment";
 
-function displayNewTask(name, date, descr) {
+function displayNewTask(task, tasks) {
   let list = document.querySelector(".list");
 
   const taskDiv = document.createElement("div");
   taskDiv.setAttribute("class", "taskDiv");
-  taskDiv.setAttribute("id", name)
+  taskDiv.setAttribute("id", tasks.indexOf(task))
 
   const taskName = document.createElement("p");
-  taskName.innerHTML = name;
+  taskName.innerHTML = task.name;
 
   const taskDate = document.createElement("date");
-  if (moment(date) < moment()) {
+  if (moment(task.date) < moment()) {
     taskDate.innerHTML = "Expired";
   } else {
-    taskDate.innerHTML = moment(date).fromNow();
+    taskDate.innerHTML = moment(task.date).fromNow();
   }
 
   const taskDescription = document.createElement("p");
-  taskDescription.innerHTML = descr;
+  taskDescription.innerHTML = task.descr;
 
   const checkTask = document.createElement("p");
   checkTask.setAttribute("id", "checkTask");
@@ -42,7 +42,8 @@ function displayNewTask(name, date, descr) {
   }
 
   function deleteTask(){
-     console.log(delTask.parentNode)
+    let button = event.target.parentNode;
+     console.log(button.parentNode);
   }
 }
 
