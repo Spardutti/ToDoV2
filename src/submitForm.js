@@ -1,4 +1,5 @@
 import { displayNewTask } from "./displayNewTask";
+import moment from "moment"
 
 function submitForm(nameInput, dateInput, descrInput, tasks) {
   const form = document.querySelector(".form");
@@ -8,10 +9,11 @@ function submitForm(nameInput, dateInput, descrInput, tasks) {
       this.name = name;
       this.date = date;
       this.description = description;
+      this.completed = false;
     }
   }
   let name = nameInput.value;
-  let date = dateInput.value;
+  let date = moment(dateInput.value).set({"hour": 23, "minute": 59})
   let descr = descrInput.value;
   let task = new Task(name, date, descr);
   let found = false;
@@ -30,6 +32,7 @@ function submitForm(nameInput, dateInput, descrInput, tasks) {
 
     form.reset();
   }
+  console.log(task);
 }
 
 export { submitForm };

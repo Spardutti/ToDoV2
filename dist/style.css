@@ -1,15 +1,25 @@
 * {
-  margin: 2px;
-  padding: 0%;
+  margin: 0px;
+  padding: 0px;
 }
+body{
+    overflow-x: hidden;
+}
+
 #container {
-  width: 100vw;
+  width: 360px;
   height: 100vh;
   display: flex;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+
+}
+#container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 .list {
   border: 1px solid black;
-  width: 400px;
+  width: 360px;
   height: 600px;
   margin: auto;
   box-shadow: 0 10px 10px 1px black;
@@ -29,10 +39,10 @@
     visibility: hidden;
 }
 .form{
-    position: relative;
-    width: 400px;
+    position: absolute;
+    width: 360px;
     height: 450px;
-    top: -100px;
+    top: 50px;
     background-color: white;
     box-shadow: 0 10px 10px 0 black;
     border: 2px solid black;
@@ -90,5 +100,12 @@ textarea{
     margin-bottom: 20px;
 }
 .checked{
-    text-decoration-line: line-through;
+    background-color: rgb(98, 214, 98);
+}
+.xFormClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    font-weight: bold;
 }

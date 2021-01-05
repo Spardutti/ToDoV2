@@ -1,6 +1,7 @@
 import moment from "moment";
 
 function displayNewTask(task, tasks) {
+
   let list = document.querySelector(".list");
 
   const taskDiv = document.createElement("div");
@@ -32,18 +33,40 @@ function displayNewTask(task, tasks) {
     deleteTask()
   })
 
+  if(task.completed == true){
+    taskDiv.classList.add("checked");
+    taskDate.innerHTML = "Completed"
+  }
+
   taskDiv.append(taskName, taskDate, checkTask, delTask);
 
   list.appendChild(taskDiv);
 
+  
+
   function checked(){
-    taskDate.setAttribute("class", "checked");
-    taskName.setAttribute("class", "checked");
-  }
+    let icon = event.target;
+    let p = icon.parentNode;
+    let div = p.parentNode;
+    if(task.completed == false){
+      task.completed = true;
+      div.classList.add("checked");
+      taskDate.innerHTML = "Completed"
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+    else console.log(task);
+}
 
   function deleteTask(){
     let button = event.target.parentNode;
-     console.log(button.parentNode);
+    let div = button.parentNode;
+    list.removeChild(div)
+
+    let arrTask = tasks[div.id];
+    let index = tasks.indexOf(arrTask);
+    tasks.splice(index, 1);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    console.log(tasks)
   }
 }
 

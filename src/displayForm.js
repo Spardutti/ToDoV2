@@ -30,6 +30,15 @@ function displayForm(tasks) {
   let descriptionInput = document.createElement("textarea");
   descriptionInput.placeholder = "Enter a brief description...";
 
+  let x = document.createElement("p");
+  x.innerHTML = "X";
+  x.setAttribute("class", "xFormClose");
+  x.addEventListener("click",() => {
+    list.removeChild(formContainer);
+    addTaskBtn.classList.add("visible");
+
+  })
+
   let submitTaskBtn = document.createElement("button");
   submitTaskBtn.innerHTML = "Add Task";
   submitTaskBtn.setAttribute("id", "submitTaskBtn");
@@ -54,7 +63,8 @@ function displayForm(tasks) {
     dateInput,
     description,
     descriptionInput,
-    submitTaskBtn
+    submitTaskBtn,
+    x
   );
   list.appendChild(formContainer);
 }
