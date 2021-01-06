@@ -7,7 +7,7 @@ body{
 }
 
 #container {
-  width: 360px;
+  width: 100vw;
   height: 100vh;
   display: flex;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -47,7 +47,7 @@ body{
     box-shadow: 0 10px 10px 0 black;
     border: 2px solid black;
 }
-label, input {
+label, input, select {
     display: block;
     margin: auto;   
 }
@@ -108,4 +108,12 @@ textarea{
     right: 0;
     margin-right: 10px;
     font-weight: bold;
+}
+.tabsDiv{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+}
+.activeTab{
+    box-shadow: 0 1px 1px 1px black;
 }
