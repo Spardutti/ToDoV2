@@ -28,7 +28,14 @@ import { displayTasks } from "./displayTask";
        tabs[j].classList.remove("activeTab");
      }
      tabs[i].classList.add("activeTab");
+     displayTabs();
    })
  }
- //figure how to dispay different folders
+ //delete working, now display specifics.
+ function displayTabs(){
+   let taskContainer = document.querySelector(".taskContainer");
+   while(taskContainer.hasChildNodes()){
+     taskContainer.firstChild.remove();
+   }
+ }
 })();

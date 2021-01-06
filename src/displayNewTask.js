@@ -2,7 +2,7 @@ import moment from "moment";
 
 function displayNewTask(task, tasks) {
 
-  let list = document.querySelector(".list");
+  let taskContainer = document.querySelector(".taskContainer");
 
   const taskDiv = document.createElement("div");
   taskDiv.setAttribute("class", "taskDiv");
@@ -38,7 +38,7 @@ function displayNewTask(task, tasks) {
 
   taskDiv.append(taskName, taskDate, checkTask, delTask);
 
-  list.appendChild(taskDiv);
+  taskContainer.appendChild(taskDiv);
 
   
 
@@ -58,7 +58,7 @@ function displayNewTask(task, tasks) {
   function deleteTask(){
     let button = event.target.parentNode;
     let div = button.parentNode;
-    list.removeChild(div)
+    taskContainer.removeChild(div)
 
     let arrTask = tasks[div.id];
     let index = tasks.indexOf(arrTask);
