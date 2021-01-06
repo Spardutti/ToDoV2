@@ -25,10 +25,30 @@ function displayForm(tasks) {
   dateInput.setAttribute("type", "date");
 
   let description = document.createElement("label");
-  description.innerHTML = "Description";
+  description.innerHTML = "Folder";
 
-  let descriptionInput = document.createElement("textarea");
-  descriptionInput.placeholder = "Enter a brief description...";
+  //creates the dropdown list to specify the folder to add the task
+  let folderSelect = document.createElement("select");
+  folderSelect.setAttribute("class", "folderList");
+
+  let allFolder = document.createElement("option");
+  allFolder.setAttribute("value", "all");
+  allFolder.innerHTML = "All";
+
+  let homeFolder = document.createElement("option");
+  homeFolder.innerHTML = "Home";
+  homeFolder.setAttribute("value", "home");
+
+  let workFolder = document.createElement("option");
+  workFolder.innerHTML = "Work";
+  workFolder.setAttribute("value", "work");
+
+  let etcFolder = document.createElement("option");
+  etcFolder.innerHTML = "Etc";
+  etcFolder.setAttribute("value", "etc");
+
+  folderSelect.append(allFolder, homeFolder, workFolder, etcFolder);
+
 
   let x = document.createElement("p");
   x.innerHTML = "X";
@@ -46,7 +66,7 @@ function displayForm(tasks) {
   submitTaskBtn.addEventListener("click", () => {
     if(nameInput.value != "" && dateInput.value != ""){
  //submit form and create the objects with the class
- submitForm(nameInput, dateInput, descriptionInput, tasks);
+ submitForm(nameInput, dateInput, folderSelect, tasks);
  list.removeChild(formContainer);
  addTaskBtn.classList.add("visible");
     }
@@ -62,7 +82,7 @@ function displayForm(tasks) {
     date,
     dateInput,
     description,
-    descriptionInput,
+    folderSelect,
     submitTaskBtn,
     x
   );

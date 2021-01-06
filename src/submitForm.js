@@ -1,21 +1,21 @@
 import { displayNewTask } from "./displayNewTask";
 import moment from "moment"
 
-function submitForm(nameInput, dateInput, descrInput, tasks) {
+function submitForm(nameInput, dateInput, folderSelect, tasks) {
   const form = document.querySelector(".form");
 
   class Task {
-    constructor(name, date, description) {
+    constructor(name, date, folder) {
       this.name = name;
       this.date = date;
-      this.description = description;
+      this.folder = folder;
       this.completed = false;
     }
   }
   let name = nameInput.value;
   let date = moment(dateInput.value).set({"hour": 23, "minute": 59})
-  let descr = descrInput.value;
-  let task = new Task(name, date, descr);
+  let folder = folderSelect.value;
+  let task = new Task(name, date, folder);
   let found = false;
   tasks.forEach((e) => {
     //check duplicate
@@ -32,7 +32,7 @@ function submitForm(nameInput, dateInput, descrInput, tasks) {
 
     form.reset();
   }
-  console.log(task);
+  console.log(tasks)
 }
 
 export { submitForm };

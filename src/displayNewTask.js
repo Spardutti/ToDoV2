@@ -18,8 +18,6 @@ function displayNewTask(task, tasks) {
     taskDate.innerHTML = moment(task.date).fromNow();
   }
 
-  const taskDescription = document.createElement("p");
-  taskDescription.innerHTML = task.descr;
 
   const checkTask = document.createElement("p");
   checkTask.setAttribute("id", "checkTask");
