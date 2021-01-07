@@ -37,7 +37,8 @@ width: 100vw;
     background-color:gray;
 }
 .hidden{
-    visibility: hidden;
+    transition: scale 300ms ease-in-out;
+    scale: 0.01;
 }
 .form{
     position: absolute;
@@ -75,7 +76,8 @@ textarea{
     font-size: 22px;
 }
 .visible{
-    visibility: visible;
+    transition: scale 300ms ease-in-out;
+    scale: 1;
 }
 .taskDiv{
    display: grid;
@@ -119,8 +121,10 @@ textarea{
     margin-right: 2px;
 }
 .activeTab{
-    transition: box-shadow 500ms;
+    transition: box-shadow 300ms;
     box-shadow: 0 1px 1px 1px black;
+    transition: scale 300ms ease-in-out;
+    scale: 1.2;
 }
 .expired{
     transition: background-color 10r00ms;
