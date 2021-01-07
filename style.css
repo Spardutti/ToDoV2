@@ -10,7 +10,6 @@ body{
 margin-left: 1px;  
 padding-right: 5px;
 width: 100vw;
-  height: 100vh;
   display: flex;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
@@ -21,8 +20,8 @@ width: 100vw;
 }
 .list {
   border: 1px solid black;
+  min-height: 100vh;
   width: 360px;
-  height: 600px;
   margin: auto;
   box-shadow: 0 10px 10px 1px black;
   text-align: center;
@@ -120,4 +119,7 @@ textarea{
 }
 .activeTab{
     box-shadow: 0 1px 1px 1px black;
+}
+.expired{
+    background-color: rgb(255, 2, 2);
 }
