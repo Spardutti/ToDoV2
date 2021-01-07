@@ -101,7 +101,8 @@ textarea{
     margin-bottom: 20px;
 }
 .checked{
-    background-color: rgb(98, 214, 98);
+    transition: background-color 1000ms;
+    background-color: rgb(10, 212, 10);
 }
 .xFormClose {
     position: absolute;
@@ -118,8 +119,10 @@ textarea{
     margin-right: 2px;
 }
 .activeTab{
+    transition: box-shadow 500ms;
     box-shadow: 0 1px 1px 1px black;
 }
 .expired{
+    transition: background-color 10r00ms;
     background-color: rgb(255, 2, 2);
 }

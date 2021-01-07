@@ -11,7 +11,8 @@ function displayNewTask(task, tasks) {
   taskName.innerHTML = task.name;
 
   const taskDate = document.createElement("date");
-  if (moment(task.date) < moment()) {
+
+  if (moment(task.date) < moment() && task.date != null) {
     taskDate.innerHTML = "Expired";
     taskDiv.classList.add("expired");
   } else {
@@ -49,7 +50,9 @@ function displayNewTask(task, tasks) {
       div.classList.remove("expired");
       div.classList.add("checked");
       taskDate.innerHTML = "Completed";
+      task.date = null;
       localStorage.setItem("tasks", JSON.stringify(tasks));
+      
     }
   }
 
