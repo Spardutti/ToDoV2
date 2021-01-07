@@ -49,7 +49,7 @@ function displayForm(tasks) {
 
   folderSelect.append(allFolder, homeFolder, workFolder, etcFolder);
 
-
+  //X to close the form/cancel
   let x = document.createElement("p");
   x.innerHTML = "X";
   x.setAttribute("class", "xFormClose");
@@ -58,7 +58,7 @@ function displayForm(tasks) {
     addTaskBtn.classList.add("visible");
 
   })
-
+ 
   let submitTaskBtn = document.createElement("button");
   submitTaskBtn.innerHTML = "Add Task";
   submitTaskBtn.setAttribute("id", "submitTaskBtn");

@@ -64,7 +64,6 @@ function displayNewTask(task, tasks) {
     let index = tasks.indexOf(arrTask);
     tasks.splice(index, 1);
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    console.log(tasks)
   }
 }
 
