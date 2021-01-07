@@ -14,6 +14,7 @@ function displayNewTask(task, tasks) {
   const taskDate = document.createElement("date");
   if (moment(task.date) < moment()) {
     taskDate.innerHTML = "Expired";
+    taskDiv.classList.add("expired");
   } else {
     taskDate.innerHTML = moment(task.date).fromNow();
   }
@@ -41,7 +42,7 @@ function displayNewTask(task, tasks) {
   taskContainer.appendChild(taskDiv);
 
   
-
+  //complete the task
   function checked(){
     let icon = event.target;
     let p = icon.parentNode;

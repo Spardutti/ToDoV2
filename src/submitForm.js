@@ -32,7 +32,6 @@ function submitForm(nameInput, dateInput, folderSelect, tasks) {
 
     form.reset();
   }
-  console.log(tasks)
 }
 
 export { submitForm };
