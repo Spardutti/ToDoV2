@@ -120,13 +120,21 @@ textarea{
     margin-left: 2px;
     margin-right: 2px;
 }
+.tabsDiv:hover{
+    cursor: pointer;
+}
 .activeTab{
     transition: box-shadow 300ms;
     box-shadow: 0 1px 1px 1px black;
-    transition: scale 300ms ease-in-out;
+    transition: scale 300ms cubic-bezier(0, 0.47, 0.32, 1.97);
     scale: 1.2;
 }
 .expired{
-    transition: background-color 10r00ms;
+    transition: background-color 300ms;
     background-color: rgb(255, 2, 2);
+}
+
+.rotate{
+    transition: transform 600ms cubic-bezier(0, 0.47, 0.32, 1.97);
+    transform: rotate(360deg);
 }
