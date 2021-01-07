@@ -43,6 +43,7 @@ function displayNewTask(task, tasks) {
   // complete the task
   function checked() {
     const icon = event.target;
+    icon.classList.add("rotate")
     const p = icon.parentNode;
     const div = p.parentNode;
     if (task.completed == false) {
