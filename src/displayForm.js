@@ -1,80 +1,76 @@
-import { submitForm } from "./submitForm";
+import { submitForm } from './submitForm'
 
-function displayForm(tasks) {
-  //get the list and button
-  const list = document.querySelector(".list");
-  let addTaskBtn = document.querySelector(".addTaskBtn");
-  addTaskBtn.classList.remove("visible");
-  addTaskBtn.classList.add("hidden");
+function displayForm (tasks) {
+  // get the list and button
+  const list = document.querySelector('.list')
+  const addTaskBtn = document.querySelector('.addTaskBtn')
+  addTaskBtn.classList.remove('visible')
+  addTaskBtn.classList.add('hidden')
 
-  //create the form
-  let formContainer = document.createElement("form");
-  formContainer.classList.add("form");
+  // create the form
+  const formContainer = document.createElement('form')
+  formContainer.classList.add('form')
 
-  let taskName = document.createElement("label");
-  taskName.innerHTML = "Name";
+  const taskName = document.createElement('label')
+  taskName.innerHTML = 'Name'
 
-  let nameInput = document.createElement("input");
-  nameInput.placeholder = "Name...";
+  const nameInput = document.createElement('input')
+  nameInput.placeholder = 'Name...'
 
-  
-  let date = document.createElement("label");
-  date.innerHTML = "Due Date";
+  const date = document.createElement('label')
+  date.innerHTML = 'Due Date'
 
-  let dateInput = document.createElement("input");
-  dateInput.setAttribute("type", "date");
+  const dateInput = document.createElement('input')
+  dateInput.setAttribute('type', 'date')
 
-  let description = document.createElement("label");
-  description.innerHTML = "Folder";
+  const description = document.createElement('label')
+  description.innerHTML = 'Folder'
 
-  //creates the dropdown list to specify the folder to add the task
-  let folderSelect = document.createElement("select");
-  folderSelect.setAttribute("class", "folderList");
+  // creates the dropdown list to specify the folder to add the task
+  const folderSelect = document.createElement('select')
+  folderSelect.setAttribute('class', 'folderList')
 
-  let allFolder = document.createElement("option");
-  allFolder.setAttribute("value", "all");
-  allFolder.innerHTML = "All";
+  const allFolder = document.createElement('option')
+  allFolder.setAttribute('value', 'all')
+  allFolder.innerHTML = 'All'
 
-  let homeFolder = document.createElement("option");
-  homeFolder.innerHTML = "Home";
-  homeFolder.setAttribute("value", "home");
+  const homeFolder = document.createElement('option')
+  homeFolder.innerHTML = 'Home'
+  homeFolder.setAttribute('value', 'home')
 
-  let workFolder = document.createElement("option");
-  workFolder.innerHTML = "Work";
-  workFolder.setAttribute("value", "work");
+  const workFolder = document.createElement('option')
+  workFolder.innerHTML = 'Work'
+  workFolder.setAttribute('value', 'work')
 
-  let etcFolder = document.createElement("option");
-  etcFolder.innerHTML = "Etc";
-  etcFolder.setAttribute("value", "etc");
+  const etcFolder = document.createElement('option')
+  etcFolder.innerHTML = 'Etc'
+  etcFolder.setAttribute('value', 'etc')
 
-  folderSelect.append(allFolder, homeFolder, workFolder, etcFolder);
+  folderSelect.append(allFolder, homeFolder, workFolder, etcFolder)
 
-  //X to close the form/cancel
-  let x = document.createElement("p");
-  x.innerHTML = "X";
-  x.setAttribute("class", "xFormClose");
-  x.addEventListener("click",() => {
-    list.removeChild(formContainer);
-    addTaskBtn.classList.add("visible");
-
+  // X to close the form/cancel
+  const x = document.createElement('p')
+  x.innerHTML = 'X'
+  x.setAttribute('class', 'xFormClose')
+  x.addEventListener('click', () => {
+    list.removeChild(formContainer)
+    addTaskBtn.classList.add('visible')
   })
- 
-  let submitTaskBtn = document.createElement("button");
-  submitTaskBtn.innerHTML = "Add Task";
-  submitTaskBtn.setAttribute("id", "submitTaskBtn");
-  submitTaskBtn.setAttribute("type", "button");
-  submitTaskBtn.addEventListener("click", () => {
-    if(nameInput.value != "" && dateInput.value != ""){
- //submit form and create the objects with the class
- submitForm(nameInput, dateInput, folderSelect, tasks);
- list.removeChild(formContainer);
- addTaskBtn.classList.add("visible");
+
+  const submitTaskBtn = document.createElement('button')
+  submitTaskBtn.innerHTML = 'Add Task'
+  submitTaskBtn.setAttribute('id', 'submitTaskBtn')
+  submitTaskBtn.setAttribute('type', 'button')
+  submitTaskBtn.addEventListener('click', () => {
+    if (nameInput.value != '' && dateInput.value != '') {
+      // submit form and create the objects with the class
+      submitForm(nameInput, dateInput, folderSelect, tasks)
+      list.removeChild(formContainer)
+      addTaskBtn.classList.add('visible')
+    } else {
+      alert('Please fill all the fields')
     }
-    else {
-      alert("Please fill all the fields");
-    }
-   
-  });
+  })
 
   formContainer.append(
     taskName,
@@ -85,8 +81,8 @@ function displayForm(tasks) {
     folderSelect,
     submitTaskBtn,
     x
-  );
-  list.appendChild(formContainer);
+  )
+  list.appendChild(formContainer)
 }
 
-export { displayForm };
+export { displayForm }
