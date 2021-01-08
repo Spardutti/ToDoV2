@@ -27,6 +27,7 @@ width: 100vw;
   text-align: center;
 }
 .addTaskBtn{
+    display: inline;
     height: 40px;
     width: 50%;
     margin: 10px auto;
@@ -37,8 +38,8 @@ width: 100vw;
     background-color:gray;
 }
 .hidden{
-    transition: scale 300ms ease-in-out;
-    scale: 0.01;
+    transition: -webkit-transform 300ms;
+    -webkit-transform: scale(0);
 }
 .form{
     position: absolute;
@@ -76,8 +77,8 @@ textarea{
     font-size: 22px;
 }
 .visible{
-    transition: scale 300ms ease-in-out;
-    scale: 1;
+    transition: -webkit-transform 300ms ease-in-out;
+    -webkit-transform: scale(1);
 }
 .taskDiv{
    display: grid;
@@ -126,8 +127,8 @@ textarea{
 .activeTab{
     transition: box-shadow 300ms;
     box-shadow: 0 1px 1px 1px black;
-    transition: scale 300ms cubic-bezier(0, 0.47, 0.32, 1.97);
-    scale: 1.2;
+    transition: -webkit-transform 300ms cubic-bezier(0, 0.47, 0.32, 1.97);
+    -webkit-transform: scale(1.2);
 }
 .expired{
     transition: background-color 300ms;
